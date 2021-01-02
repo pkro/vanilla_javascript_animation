@@ -1,12 +1,15 @@
-var ol = 20;
-var circleInterval = setInterval(circleAnimation, 50);
+var ol = 0;
+var circleInterval;
 
-function circleAnimation() {
+function circleAnimation(time) {
   ol++;
-  //ol += ol += 0.2; // same
   document.getElementById('circle').style.left = ol + 'px';
-  if (ol > 8000 / 50) {
-    clearInterval(circleInterval);
+  if (time < 4000) {
+    circleInterval = requestAnimationFrame(circleAnimation);
+  } else {
     document.getElementById('circle').style.backgroundColor = 'dimgrey';
+    // works fine without this
+    cancelAnimationFrame(circleInterval);
   }
 }
+circleInterval = requestAnimationFrame(circleAnimation);

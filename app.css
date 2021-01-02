@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body {
+  background-color: rgb(30, 30, 30);
+  color: rgb(200, 200, 200);
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+h1 {
+  margin: 20px;
+}
+
+#circle {
+  left: 0px;
+  background-color: crimson;
+  width: 50px;
+  height: 50px;
+  border-radius: 1000px;
+  position: relative;
+}
+
+/*
+#circle:hover {
+  background-color: white;
+  animation: 5s linear move;
+}
+
+@keyframes move {
+  100% {
+    left: 500px;
+  }
+}
+
+*/

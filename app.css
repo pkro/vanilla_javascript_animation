@@ -4,20 +4,16 @@ body {
   color: rgb(200, 200, 200);
   font-family: 'Lato', sans-serif;
   margin: 0;
-  padding: 20px 0 0 0;
+  padding: 0;
 }
 
 h1 {
   margin: 20px;
 }
 
-#circle {
-  left: 0px;
-  background-color: crimson;
-  width: 50px;
-  height: 50px;
-  border-radius: 9999px; /* always does 50%; also usable for round (not rounded) shorter sides of rectangles */
-  position: relative;
+canvas {
+  margin: 20px;
+  border: 4px solid crimson;
 }
 
 /*

@@ -1,27 +1,36 @@
-var ol = 0;
-var circleInterval;
-var isPlaying = false;
-var playingBG = document.getElementById('circle').style.backgroundColor;
-var stoppedBG = 'dimgrey';
+(function () {
+  var ol = 0;
+  var circleInterval;
+  var isPlaying = false;
+  const circle = document.getElementById('circle');
+  var playingBG = circle.style.backgroundColor;
+  var stoppedBG = 'dimgrey';
+  var growthDirection = -1;
+  var circleSize = (initialSize = circle.offsetWidth);
 
-document.getElementById('circle').style.backgroundColor = stoppedBG;
+  circle.style.backgroundColor = stoppedBG;
 
-function circleAnimation(time) {
-  ol++;
-  document.getElementById('circle').style.left = ol + 'px';
-  circleInterval = requestAnimationFrame(circleAnimation);
-}
-
-function mouseClicked() {
-  isPlaying = !isPlaying;
-  console.log(this.type);
-  if (isPlaying) {
-    document.getElementById('circle').style.backgroundColor = playingBG;
+  function circleAnimation(time) {
+    ol++;
+    if (circleSize >= initialSize) {
+      circleSize = circleSize * 1 + growthDirection * 1;
+    }
+    circle.style.left = ol + 'px';
+    circle.style.width = circle.style.height = circleSize + 'px';
     circleInterval = requestAnimationFrame(circleAnimation);
-  } else {
-    document.getElementById('circle').style.backgroundColor = stoppedBG;
-    cancelAnimationFrame(circleInterval);
   }
-}
 
-document.getElementById('circle').addEventListener('click', mouseClicked);
+  function mouseClicked() {
+    isPlaying = !isPlaying;
+    if (isPlaying) {
+      growthDirection *= -1; // only change when moving
+      circle.style.backgroundColor = playingBG;
+      circleInterval = requestAnimationFrame(circleAnimation);
+    } else {
+      circle.style.backgroundColor = stoppedBG;
+      cancelAnimationFrame(circleInterval);
+    }
+  }
+
+  circle.addEventListener('click', mouseClicked);
+})();

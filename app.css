@@ -16,7 +16,7 @@ h1 {
   background-color: crimson;
   width: 50px;
   height: 50px;
-  border-radius: 1000px;
+  border-radius: 9999px; /* always does 50%; also usable for round (not rounded) shorter sides of rectangles */
   position: relative;
 }
 

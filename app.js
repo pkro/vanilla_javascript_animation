@@ -19,7 +19,6 @@
   }));
 
   function drawCircle(x, y, radius) {
-    console.log(y);
     context.fillStyle = 'crimson';
     context.beginPath();
     context.arc(x, y, radius, 0, 2 * π);
@@ -28,7 +27,8 @@
 
   function animate(time) {
     //context.clearRect(0, 0, w, h);
-    context.globalCompositeOperation = 'difference';
+    //context.globalCompositeOperation = 'difference';
+    context.globalCompositeOperation = 'screen';
     balls.forEach((ball, idx) => {
       if (ball.x > w) {
         ball.x = -50;

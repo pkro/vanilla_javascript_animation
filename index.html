@@ -8,7 +8,17 @@
     <title>Document</title>
   </head>
   <body>
-    <canvas id="animated-canvas" width="600" height="400"></canvas>
+    <div id="web-animation"></div>
+
+    <button type="button" onclick="rotatingSquare.play()">Play</button>
+    <button type="button" onclick="rotatingSquare.pause()">Pause</button>
+    <button type="button" onclick="rotatingSquare.playbackRate+=0.2">
+      accelerate
+    </button>
+    <button type="button" onclick="rotatingSquare.playbackRate-=0.2">
+      decelerate
+    </button>
+    <!--- this can be loaded after as the browser reads all first and evaluates the onclick later -->
     <script src="app.js"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 # Notes
 
+*See other branches for examples of different forms of animations*
 ## JS animation foundations
 
 ### requestAnimationFrame

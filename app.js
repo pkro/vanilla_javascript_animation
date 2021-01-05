@@ -6,7 +6,7 @@
   const { PI: π } = Math;
   var anim = null;
 
-  let numBalls = 1 + Math.floor(Math.random() * 4);
+  let numBalls = 3 + Math.floor(Math.random() * 3);
   let balls = Array(numBalls).fill({
     velocity: 50,
     x: 60,
@@ -27,7 +27,8 @@
   }
 
   function animate(time) {
-    context.clearRect(0, 0, w, h);
+    //context.clearRect(0, 0, w, h);
+    context.globalCompositeOperation = 'difference';
     balls.forEach((ball, idx) => {
       if (ball.x > w) {
         ball.x = -50;
